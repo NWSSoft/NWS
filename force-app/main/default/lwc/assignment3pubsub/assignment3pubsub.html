@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="BIKES">
+        <template for:each={BikeData} for:item="Bikerec">
+          <ul key={Bikerec.Id} class="slds-list_dotted">
+         <li>
+            <a href="javascript:void(0);" name={Bikerec.Id} onclick={handleOnClick}>{Bikerec.Name}</a>
+        </li>
+        </ul>
+        </template>
+          
+    </lightning-card>
+</template>

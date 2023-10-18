@@ -1,0 +1,108 @@
+<template>
+    <div class="slds-box">
+
+
+        <div class="slds-grid slds-wrap">
+            <template for:each={reqRec} for:item="contact">
+                <div class="slds-col slds-size_4-of-12 slds-p-right_medium" key={contact.Id} style="margin-bottom: 1%">
+
+                    <p key={contact.Id} class="slds-box"><lightning-formatted-rich-text
+                            value={contact.profile_pic__c}></lightning-formatted-rich-text></p>
+                    <p key={contact.Id} class="slds-align_absolute-center" style="height:5rem"><b>{contact.Name}</b></p>
+                    <para key={contact.Id} class="slds-align_absolute-center" style="height:5rem">
+                        <br><br>{contact.description__c}</para>
+                    <p key={contact.Id} class="slds-align_absolute-center" style="height:5rem"><br><b>AMOUNT REQUIRED
+                            :{contact.amount_required__c}</b></p>
+                    <p key={contact.Id}><br><lightning-button class="slds-align_absolute-center" variant="destructive"
+                            label="Donate" data-recid={contact.Id} onclick={showModalBox}></lightning-button></p>
+                </div>
+            </template>
+        </div><br />
+
+        <lightning-button class="slds-align_absolute-center" variant="success" label="Show More"
+            onclick={showMoreHandler}></lightning-button>
+
+    </div>
+
+    <template if:true={isShowModal}>
+        <div class="modal-dialog modal-sm">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+
+                <div class="slds-modal__container">
+
+                    <!-- modal header start -->
+
+                    <header class="slds-modal__header">
+
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={hideModalBox}>
+
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+
+                            <span class="slds-assistive-text">Close</span>
+
+                        </button>
+                        <div style="position:relative; max-width: 2000px; margin: 0 auto;">
+                            <img src="https://brave-narwhal-77pqyh-dev-ed.trailblaze.file.force.com/servlet/servlet.ImageServer?id=0152w000002w7C2&oid=00D2w00000KMTsh&lastMod=1696837948000"
+                                style="width:50%;">
+                        </div>
+
+
+                    </header>
+
+
+
+                    <!-- modal body start -->
+
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                        <lightning-input label="Name" onchange={name}></lightning-input>
+                        <lightning-input label="Phone" onchange={contact}></lightning-input>
+                        <lightning-input label="Email" onchange={email}></lightning-input>
+                        <lightning-input label="Amount" onchange={Amount}></lightning-input>
+                        <!---  <div class="test">  <lightning-formatted-rich-text value="Name:-Nayana Dhage" >
+                </lightning-formatted-rich-text><br>
+                <div class="slds-p-top_xx-large"><lightning-formatted-rich-text  value="Email:-nayanabari91@gmail.com" >
+                </lightning-formatted-rich-text><br></div>
+                
+                <div class="slds-p-top_xx-large"><lightning-formatted-rich-text value="Amount:-1000" >
+                </lightning-formatted-rich-text></div></div>-->
+
+
+                    </div>
+
+
+
+                    <!-- modal footer start-->
+
+                    <footer class="slds-modal__footer">
+
+                        <lightning-formatted-rich-text onchange={amount} class="test">
+                        </lightning-formatted-rich-text>
+
+                        <div>
+
+
+
+                            <lightning-button variant="brand" onclick={navigateToWebPage}
+                                label="Next"></lightning-button>&nbsp;&nbsp;
+                            <lightning-button variant="brand" onclick={hideModalBox} label="cancel"></lightning-button>
+
+                        </div>
+
+                    </footer>
+
+
+
+                </div>
+
+            </section>
+
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </template>
+    </div>
+    </lightning-card>
+</template>

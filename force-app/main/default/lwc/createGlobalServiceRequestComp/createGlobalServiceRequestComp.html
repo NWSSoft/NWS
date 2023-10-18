@@ -1,0 +1,18 @@
+<template>
+<lightning-quick-action-panel header="New Case">
+<lightning-record-edit-form record-id={recordId} object-api-name="Case" record-type-id={recordTypeId}
+    onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+                <lightning-output-field field-name="Id">
+                    </lightning-output-field>
+            <lightning-input-field field-name="Status">
+                </lightning-input-field>
+                <lightning-input-field field-name="Origin">
+                    </lightning-input-field>
+
+                    <lightning-input-field field-name="RecordTypeId" value={ProductRecordTypeId.data}>
+                    </lightning-input-field>
+        <lightning-button class="slds-m-top_small" variant="brand" type="submit"  label="Save">
+</lightning-button>
+</lightning-record-edit-form>
+</lightning-quick-action-panel>
+</template>

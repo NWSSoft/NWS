@@ -1,0 +1,87 @@
+<template>
+    
+    <div class="slds-m-around_medium">
+      
+        <div class="slds-m-bottom_small">
+            <lightning-input type="text"
+               value={searchValue}
+               label="Search"
+               placeholder="Menu_items"
+               onchange={searchKeyword}
+               ></lightning-input>
+         </div>
+    </div>
+
+    <lightning-button label="Search"
+          onclick={handleSearchKeyword}
+          variant="brand"></lightning-button>
+
+          <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small">
+            <thead>
+               <tr class="slds-line-height_reset">
+                  <th class="" scope="col">
+                     <div class="slds-truncate" title="First Name">Name</div>
+                  </th>
+                  <th class="" scope="col">
+                     <div class="slds-truncate" title="Last Name">price__c</div>
+                  </th>
+                  <th class="" scope="col">
+                     <div class="slds-truncate" title="Phone">Image__c</div>
+                  </th>
+                  <th class="" scope="col">
+                     <div class="slds-truncate" title="Email">Description__c</div>
+                  </th>
+               </tr>
+            </thead>
+
+            <tbody>   
+                <template for:each={fetchvalue} for:item="MI">
+                   <tr class="slds-hint-parent" key={MI.Id}>
+                      <td>
+                         <div class="slds-truncate">{MI.Name}</div>
+                      </td>
+                      <td>
+                         <div class="slds-truncate">{MI.price__c}</div>
+                      </td>
+                      <td>
+                        <div class="slds-truncate">{MI.Image__c}</div>
+                     </td>
+                     <td>
+                        <div class="slds-truncate">{MI.Description__c}</div>
+                     </td>
+
+                      <td>
+                        
+                         <div class="slds-truncate">
+                            <lightning-formatted-rich-text value={MI.Name} ></lightning-formatted-rich-text>
+                         </div>
+                      </td>
+
+                      <td>
+                        
+                        <div class="slds-truncate">
+                           <lightning-formatted-rich-text value={MI.price__c} ></lightning-formatted-rich-text>
+                        </div>
+                     </td>
+
+
+                     <td>
+                        
+                        <div class="slds-truncate">
+                           <lightning-formatted-rich-text value={MI.Image__c} ></lightning-formatted-rich-text>
+                        </div>
+                     </td>
+
+                      <td>
+                         <div class="slds-truncate">
+                            <lightning-formatted-rich-text value={MI.Description__c} ></lightning-formatted-rich-text>
+                         </div>
+                      </td>
+                   </tr>
+                </template>
+             </tbody>
+          </table>
+      
+
+
+</template>

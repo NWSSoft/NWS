@@ -1,0 +1,17 @@
+<template>
+    <div>
+        <lightning-input  label="Enter Name" type="text" value={inpName} data-recid="sun"></lightning-input>
+        <lightning-input  label="Enter age" type="text" value={inpAge} data-recid="mon"></lightning-input>
+
+        <lightning-button  label="add student" onclick ={addStudenthandler}></lightning-button>
+    </div>
+<ul>
+    <template for:each={student} for:item="stud">
+             <li key={stud.Name}>
+                <c-nws-child-comp_api_using-get-set student={stud}></c-nws-child-comp_api_using-get-set>
+            </li>
+        </template>
+   
+</ul>
+
+</template>

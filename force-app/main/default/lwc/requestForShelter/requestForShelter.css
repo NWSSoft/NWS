@@ -1,0 +1,42 @@
+para {
+  color: navy;
+  text-indent: 10px;
+}
+/*
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+ 
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+ 
+  font-size: 30px;
+  text-align: center;
+}
+.div2{
+  width: 300px;
+  height: 350px;  
+  border: 1px solid red;
+}
+.myclass{
+ 
+} */
+.myclass{
+      height: 200px;
+  border: 1px solid black;
+}
+.slds-modal__container {
+    margin: 0 auto;
+    width: 18%;
+    height: full;
+    max-width: 40rem;
+    min-width: 20rem;
+}
+.test{
+font-size: large;
+text-align: left;
+
+}

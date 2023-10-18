@@ -1,0 +1,14 @@
+<template>
+<lightning-card title="publisher pass the data FROM  LWC To AURA CMP">
+    <lightning-layout>
+        <lightning-layout-item size="9" padding="around-small">
+            <lightning-input type="search" data-kind="sun"  label="Enter a text"></lightning-input>
+            {currentmsgvar}
+        </lightning-layout-item>
+      <lightning-layout-item size="9" padding="around-small">
+                 <lightning-button label="Send Message" onclick ={sendmsghandler} icon-name="utility:send" variant="Brand"></lightning-button>
+           </lightning-layout-item>
+       </lightning-layout>
+
+   </lightning-card>
+</template>

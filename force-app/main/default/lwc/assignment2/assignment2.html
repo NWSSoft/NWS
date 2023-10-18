@@ -1,0 +1,37 @@
+<template>
+        <lightning-card>
+        <lightning-accordion allow-multiple-sections-open>
+        
+            <lightning-accordion-section name="name" class="slds-form-element_compound" label="Opportunity ">
+                
+                <lightning-record-edit-form object-api-name="Opportunity" onsuccess={handleSuccess}>
+               
+                    <lightning-input name="textield" class="slds-col" type="text" label="Name">
+                    </lightning-input>
+                    <lightning-input name="textield" class="slds-col" type="date" label="CloseDate">
+                    </lightning-input>
+                    <lightning-input name="textield" class="slds-col" type="type" label="StageName">
+                    </lightning-input>
+                    <lightning-input name="textield" class="slds-col" type="type" label="Amount">
+                    </lightning-input>
+                    <lightning-input-field field-name="AccountId" class="slds-col" value={selectedRowId}> 
+                     </lightning-input-field>
+                     <div class="slds-align_absolute-center">
+                     <lightning-button label="Save" name="save" onclick={handleSaveOnClick} variant="brand"></lightning-button>&nbsp; &nbsp;
+                    <lightning-button label="Cancel" name="cancel" onclick={handleCancleOnClick} variant="brand"></lightning-button>
+                    </div>
+                    
+                 </lightning-record-edit-form>
+              </lightning-accordion-section>
+           
+              <lightning-accordion-section name="acc" label="Accounts">
+    <lightning-datatable key-field="Id"
+                          data={data} 
+                          columns={columns} 
+                          max-row-selection="1"
+                           onrowselection={handleRowSelection}></lightning-datatable>
+         </lightning-accordion-section>
+    </lightning-accordion>
+ </lightning-card>
+        
+</template>

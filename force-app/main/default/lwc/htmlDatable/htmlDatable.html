@@ -1,0 +1,252 @@
+<template>
+     <lightning-input label="search" type="text" onchange={handlesrch}  placeholder="Menu dish"></lightning-input><br/>
+     <lightning-button label="Search" variant="brand" type="text" onclick={handleclick}></lightning-button>
+    <div style="position: relative;">
+        <img src={frontimg} alt="logo" width="100%"/>
+           <div class="slds-text-align_center" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; font-size:3.2vw; width:200px">
+                Welcome to
+                <p class="slds-m-top_small">
+            3D-RESTAURANT  
+                    " Good food is  the foundation of genuine happiness"....
+                </p>
+            </div>
+        </div>
+
+        <template if:true={imgList}>
+            <lightning-layout multiple-rows="true" pull-to-boundary="small">
+                <template for:each={imgList} for:item="cas">
+                    <div key={cas.Id} class="slds-box">
+                    <lightning-layout-item  size="3" class="slds-var-p-around_x-small">
+                        <!-- Start bear tile -->
+                       
+                            
+                                        <lightning-formatted-rich-text value={cas.Image__c}></lightning-formatted-rich-text>
+                                   
+                                        <p class="slds-var-m-bottom_xx-small">Name:{cas.Name}</p>
+                                        <p class="slds-var-m-bottom_xx-small">Price:{cas.price__c}</p>
+                                        
+                               
+                        <!-- End bear tile -->
+                    </lightning-layout-item>
+                </div>
+                </template>
+            </lightning-layout>
+        </template>
+    </template>
+
+
+
+
+        <!-- <template lwc:if={imgList}>
+            
+                <template for:each={imgList} for:item="cas">
+                    <lightning-layout key={cas.Id}  horizontal-align="space">
+                    <lightning-layout-item  size="6" >
+            
+           
+            
+          
+            
+            
+                <div style="border:1px #ddd solid; padding:10px; background:#eee; margin:40px 0;size: 300px; height: 500px; width :420px">
+                    <span>Name : </span><lightning-formatted-number value={cas.Name} format-style="text" ></lightning-formatted-number>&nbsp;&nbsp;
+            <span>Price : </span><lightning-formatted-number value={cas.price__c} format-style="currency" ></lightning-formatted-number>
+           <lightning-formatted-rich-text value={cas.Image__c}></lightning-formatted-rich-text>
+        </div>
+            
+        
+        </lightning-layout-item>
+            
+        </lightning-layout>  
+</template>
+
+ </template>
+</template> -->
+
+
+
+
+
+    
+    
+    
+    
+    <!--<lightning-card title="MENU-ITEMS">
+       
+
+        <div class="wrapper"
+        <template for:each={tableColumnContentWrapper} for:item='contentColumn'>
+            <div class="row" key={contentColumn.fieldName}>
+                <div class="column">
+                    <lightning-formatted-rich-text value={contentColumn.stateHtml}></lightning-formatted-rich-text>
+                </div>
+            </div>
+        </template>
+        
+
+
+
+
+
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <span></span>
+            </div>
+            
+        </div><br/>
+            <div class="slds-m-around_medium">
+              
+              <div class="slds-m-bottom_small">
+                  <lightning-input type="text"
+                     value={searchValue}
+                     label="Contact Name"
+                     onchange={searchKeyword}
+                     ></lightning-input>
+               </div>
+               
+               <lightning-button label="Search"
+                  onclick={handleSearchKeyword}
+                  variant="brand"></lightning-button>
+                  
+              
+               <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small">
+                  <thead>
+                     <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                           <div class="slds-truncate" title="First Name"> Name</div>
+                        </th>
+                       
+                        <th class="" scope="col">
+                           <div class="slds-truncate" title="Description__c">Description__c</div>
+                        </th>
+                        <th class="" scope="col">
+                           <div class="slds-truncate" title="price__c">price__c</div>
+                        </th>
+                     </tr>
+                  </thead>
+                  
+                  <tbody> 
+                    
+                    
+
+                   
+                           
+                   
+                     <template for:each={contacts} for:item="con">
+                        <tr class="slds-hint-parent" key={contact.Id}>
+                           <td>
+                              <div class="slds-truncate">{con.FirstName}</div>
+                           </td>
+                           <td>
+                              <div class="slds-truncate">{con.LastName}</div>
+                           </td>
+                           <td>
+                              <div class="slds-truncate">
+                                 <lightning-formatted-phone value={con.Phone} ></lightning-formatted-phone>
+                              </div>
+                           </td>
+                           <td>
+                              <div class="slds-truncate">
+                                 <lightning-formatted-email value={con.Email} ></lightning-formatted-email>
+                              </div>
+                           </td>
+                        </tr>
+                     </template>
+                  </tbody>
+               </table>
+            </div>
+        
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate">
+                            <lightning-input onchange={allSelected} type="checkbox"></lightning-input>
+                        </div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" style="width:100px;height:100px" title="Name">Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" style="width:100px;height:100px" title="Description__c">Description__c</div>
+                    </th>
+           
+           
+                    <th class="" scope="col">
+                        <div class="slds-truncate" style="width:100px;height:100px" title="Price__c">Price__c</div>
+                    </th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={data} for:item="con">
+                    <tr key={con.Id}>
+                        <td scope="col">
+                            <div>
+                                <lightning-input type="checkbox" value={con.Name} data-id={con.Id}></lightning-input>
+                            </div>
+                        </td>
+                        <td scope="col">
+                            <div>{con.Name}</div>
+                        </td>
+                        <td scope="col" style="width:300px">
+                            <div>{con.Description__c}</div>
+                        </td>
+                        <td scope="col" style="width:100px">
+                            <div>{con.price__c}</div>
+                        </td>
+                        <td scope="col">
+                            <div style="width:100px;height:100px">
+                                <lightning-formatted-rich-text value={con.Image__c}>
+        </lightning-formatted-rich-text>
+                            </div>
+                           
+                            </td>
+                  
+                    </tr>
+            
+                </template>
+            </tbody>
+        </table>
+
+        
+            This modal box used to show the selected contacts
+        -->
+
+      <!-- <div if:true={selectedCons}>
+            <template if:true={bShowModal}>
+                <section aria-describedby="modal-content-id-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open" role="dialog" tabindex="-1">
+                    <div
+                        class="slds-modal__container">
+                     modal header start -->
+                    <!--  <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeModal} title="Close">
+                                <lightning-icon alternative-text="close" icon-name="utility:close" size="small" variant="inverse"></lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 class="slds-text-heading_medium slds-hyphenate" id="modal-heading-01">Selected menu-item Records</h2>
+                        </header>
+                         modal body start 
+                       <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <template for:each={selectedCons} for:item="con">
+                                <dl class="slds-list_horizontal slds-wrap" if:true={con.Id} key={con.Id}>
+                                    <dt class="slds-item_label slds-truncate" title="First Name"> Name:</dt>
+                                    <dd class="slds-item_detail slds-truncate">{con.Name}</dd>
+                                    <dt class="slds-item_label slds-truncate" title="LastName">Contact Id:</dt>
+                                    <dd class="slds-item_detail slds-truncate">{con.Id}</dd>
+                                    <hr></dl>
+                                </template>
+
+                            </div>
+                             modal footer start-->
+                          <!--  <footer class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                            </footer>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+            </div> -->
+       <!-- </lightning-card> -->
+   <!-- </template> -->

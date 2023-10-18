@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Parent Component">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small" size="5">
+                <div class="slds-m-around_small">
+                    <c-childfetchaccount-comp onmydata={handleMyData}></c-childfetchaccount-comp>
+                </div>                   
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="7">
+                <div class="slds-m-around_small">
+                    <template if:true={accRecords.data}>
+                        <lightning-datatable
+                                key-field="Id"
+                                data={accRecords.data}
+                                columns={columns}>
+                        </lightning-datatable>
+                   </template>
+                </div>                
+            </lightning-layout-item>
+        </lightning-layout>         
+    </lightning-card>
+</template>

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card class="slds-var-p-around_medium" title="Menu Card">
+        <div class="slds-m-around_medium">
+            <template if:true={getimg.data}>
+                <template for:each={getimg.data} for:item="acc">
+                    
+                    {acc.name}
+                    <lightning-formatted-rich-text key={acc.Id}
+        value={acc.Image__c}
+    ></lightning-formatted-rich-text>
+                </template>
+            </template>
+           
+        </div>
+   
+</lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="USe Post FOR Heroku">
+        <div class="slds-p-around_medium">
+            <lightning-input label="callout" name="post call animal " onchange={callouthndler}></lightning-input>
+
+            <lightning-button label="On data" onclick={clickhandler}></lightning-button>
+            <template for:each={animallist} for:item="animal">
+                <ul key={animal}>
+                    <li><b>{animal}</b></li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

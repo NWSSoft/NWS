@@ -1,0 +1,26 @@
+<template >
+<div class="slds-card slds-align_absolute-center" style="height:400px; width:400px">
+<lightning-Card>
+        <div class="contentClass slds-align_absolute-center" style="color: blue;font-size:1.2vw;">
+    <h1>Shelter Login Page</h1>
+    </div>
+<div>
+<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+<lightning-icon class="input-icon" icon-name="utility:user" alternative-text="username" size="xx-small"></lightning-icon>                
+<lightning-input data-id="reset" variant="standard"  label="Username" placeholder="Username" onchange={usernameClick}></lightning-input>
+</div>
+
+<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+<lightning-icon class="input-icon" icon-name="utility:lock" alternative-text="username" size="xx-small"></lightning-icon>
+<lightning-input data-id="reset" type="password" variant="standard"  label="Password" placeholder="Password" onchange={passwordClick}></lightning-input>
+        </div>
+</div>
+<a onclick={navigateToCmp}> Forget Password </a>
+ <div class="slds-col slds-var-p-top_small slds-align_absolute-center">
+<button class="slds-button slds-button_brand" onclick={HandleLogin}>Log In</button>
+<button class="slds-button slds-button_destructive" onclick={HandleCancel}>Reset</button>
+</div>
+
+</lightning-card>
+</div>
+</template>

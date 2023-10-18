@@ -1,0 +1,9 @@
+.messageClass{
+    position: absolute;  
+  left: 32%;
+ background-color: rgb(198, 195, 195);
+
+}
+.textColor{
+    color: rgb(198, 195, 195);
+}

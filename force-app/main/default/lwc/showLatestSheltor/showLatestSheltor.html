@@ -1,0 +1,36 @@
+<template>
+	<div class="slds-grid slds-gutters">
+        <template for:each={shelterlist} for:item="shel">
+            <div class="slds-col" key={shelterlist.Id}>
+			    <lightning-card>
+                    <div class="slds-p-around_medium">
+                           <ul key={shel.Id}>
+					<li>
+
+							<div style="width:200px; height: 200px;" class="slds-align_absolute-center">
+                                <lightning-formatted-rich-text value={shel.Shelter_Pictures__c}>
+							    </lightning-formatted-rich-text>
+							</div>
+						
+							<a href={shel.Shelter_Pictures__c} name={shel.Id} onclick={nameClick} class="slds-align_absolute-center">{shel.Name}</a>					
+							<div class="slds-align_absolute-center">
+                            {shel.About__c}		</div>		
+					</li>
+				</ul>
+                    </div>
+                </lightning-card>
+		    </div>
+        </template>
+	</div>
+	<lightning-card class="slds-has-dividers_around slds-has-block-links">
+		  <lightning-layout multiple-rows="true">
+			
+
+				
+
+			
+			 </lightning-layout>
+	</lightning-card>
+
+
+</template>

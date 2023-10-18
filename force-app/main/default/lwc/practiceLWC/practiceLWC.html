@@ -1,0 +1,98 @@
+<template>
+       <lightning-input  variant="brand" name="name" label="accsearch" onchange={changehandler} ></lightning-input>
+       <lightning-button label="getRec" variant="brand" onclick={handleClick}></lightning-button>
+       <template if:true={contacts} for:each={contacts} for:item="con" for:index="index">
+          <li key={con.Id}>
+               {con.Name}
+          </li>
+       </template>  
+       <div class="slds-box">
+         <template if:true={leadSourceValues.data}>
+             <lightning-combobox name="progress" label="Lead Source" value={value}
+                 options={leadSourceValues.data.values} onchange={handleChange}>
+             </lightning-combobox>
+         </template>
+     </div>
+     <!---                              -->
+     <div class="slds-box slds-theme_shade"> 
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-12">
+            </div>
+            <div class="slds-col slds-size_9-of-12">
+              <template for:each={caseList} for:item="cs">
+                <lightning-card key={cs.Id}>
+                  <div class="slds-einstein-header slds-card__header">
+                    <lightning-layout>
+                        <lightning-layout-item size="3">
+                          <lightning-icon icon-name="standard:case" size="large"></lightning-icon><br>
+                          {cs.CaseNumber}
+                        </lightning-layout-item>
+                        <lightning-layout-item size="8">
+                          subject
+                        </lightning-layout-item>
+                        <lightning-layout-item size="1">
+                          <lightning-button-icon variant="brand-outline" icon-name="utility:delete" onclick={handleClick}></lightning-button-icon>
+                          <lightning-button-menu variant="brand-outline" alternative-text="Show menu" onclick={clickHandler}>
+                            <lightning-menu-item value="edit" label="Edit" icon-name="utility:edit"></lightning-menu-item>
+                            <lightning-menu-item value="view" label="View" icon-name="utility:preview"></lightning-menu-item>
+                          </lightning-button-menu>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                      <lightning-layout-item size="3"></lightning-layout-item>
+                      <lightning-layout-item size="4">Priority: <span class="slds-badge">{cs.Priority}</span></lightning-layout-item>
+                      <lightning-layout-item size="1"></lightning-layout-item>
+                      <lightning-layout-item size="4">Closed Date: <span class="slds-badge">{cs.ClosedDate}</span></lightning-layout-item>
+                    </lightning-layout>
+                  </div>
+                  <div slot="footer">
+                    <div class="slds-grid slds-wrap">
+                      <div class="slds-col slds-size_2-of-12">
+                        Status: <span class="slds-badge blue-badge">{cs.Status}</span>
+                      </div>
+                      <div class="slds-col slds-size_8-of-12">
+                        <lightning-badge label="Status Values" class="blue-badge" ></lightning-badge><br>
+                        <!-- <c-case-progress case-status={cs.Status}></c-case-progress> -->
+                        <lightning-button variant="brand" label="View Account Info" onclick={handleClick}></lightning-button>
+                      </div>
+                      <div class="slds-col slds-size_2-of-12">
+                        Type: <span class="slds-badge blue-badge">{cs.Type}</span>
+                      </div>
+                    </div>
+                  </div>
+                </lightning-card>
+              </template>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+            </div>
+        </div>
+      </div>
+      <!--password -->
+      <lightning-card title="Password Validation">
+        <div class="slds-var-m-around_medium">
+          <lightning-input type="text" label="Username" required></lightning-input>
+          <lightning-input
+            type="password"
+            label="Enter your password"
+            name="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            required
+            onchange={handleChange}
+            onfocus={handleFocus}
+            onblur={handleBlur}
+          ></lightning-input>
+          <br />
+          <lightning-button label="Save" title="Save"> </lightning-button>
+          <br />
+          <template if:true={showValidation}>
+            <div class="slds-box slds-theme_shade slds-theme_alert-texture">
+              <h3>Password must contain the following :</h3>
+              <p data-id="letter" class="invalid">A lowercase letter</p>
+              <p data-id="capital" class="invalid">A uppercase letter</p>
+              <p data-id="number" class="invalid">A number character</p>
+              <p data-id="length" class="invalid">Minimum 8 characters</p>
+            </div>
+          </template>
+        </div>
+      </lightning-card>
+</template>

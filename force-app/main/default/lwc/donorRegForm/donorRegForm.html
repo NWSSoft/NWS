@@ -1,0 +1,66 @@
+<template>
+    <lightning-card>
+    <div class="slds-align_absolute-center">
+        <div style="width: 300px; border:1px solid black;" class="slds-p-around_medium">
+            <div class="slds-text-heading_medium slds-text-align_center">
+                <b>Registration Form</b>
+            </div>
+            <div>
+                <lightning-record-edit-form object-api-name='Donor__c' layout-type="Full" column="2"
+                    onsuccess={handlesucess}>
+                    <lightning-messages>
+                    </lightning-messages>
+                    <lightning-input-field field-name={name}> </lightning-input-field>
+                    
+                    
+                    <lightning-input-field field-name={email}> </lightning-input-field>
+                    <lightning-input-field field-name={phone}> </lightning-input-field>
+                    <lightning-input-field field-name={country} type="picklist"> </lightning-input-field>
+
+                    <div class="slds-var-m-top_medium">
+                        <lightning-button variant="brand" type="submit" label="CreateAccount">
+                        </lightning-button>
+                        <lightning-button variant="destructive" type="reset" label="Cancel">
+                        </lightning-button>
+                    </div>
+
+
+
+                </lightning-record-edit-form>
+            </div>
+        </div>
+    </div>
+</lightning-card>
+    <!-- <lightning-card variant="Narrow" title="Registration Form">
+       
+        <lightning-layout>
+            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="6" class="slds-align_absolute-center" style="width:300px; height:400px; border:1px solid black; margin-top:30px;
+            border-radius:10px;
+            padding-top:20px;
+            padding-left:10px;
+            padding-right:10px;">
+               <div class ="Registration Form">
+                <lightning-record-edit-form object-api-name='Donor__c' layout-type="Full" column="2">
+                    <lightning-input-field field-name={name} > </lightning-input-field>
+                    <lightning-input-field field-name={password}> </lightning-input-field>
+                    <lightning-input-field field-name={email}> </lightning-input-field>
+                    <lightning-input-field field-name={phone}> </lightning-input-field>
+
+                    <div class="slds-var-m-top_medium">
+                        <lightning-button variant="brand" type="submit" label="CreateAccount">
+                        </lightning-button>
+                        <lightning-button variant="destructive" label="Cancel">
+                        </lightning-button>
+                    </div>
+
+
+
+                </lightning-record-edit-form>
+            </div>
+
+            </lightning-layout-item>
+
+        </lightning-layout>
+        
+    </lightning-card> -->
+</template>

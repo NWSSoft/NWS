@@ -1,0 +1,6 @@
+<template>
+    <template for:each={Account.data} for:item="getimg">
+        <p key={Account.data}>{note.Title}-{note.TextPreview}</p>
+        <lightning-formatted-rich-text key={Account.data} value={note.VersionData}></lightning-formatted-rich-text>
+    </template>
+</template>

@@ -1,0 +1,31 @@
+<template>
+<lightning-card>
+   
+<img src="https://nwssoft2022-dev-ed.develop.file.force.com/servlet/servlet.ImageServer?id=0155j000003bPoc&oid=00D5j00000CAMgT&lastMod=1693207910000"  width="100" height="50">
+ 
+ <lightning-button variant="success" label="Donate Now" title="Successful action" onclick={handleClick} class="slds-m-left_x-small slds-text-align_right"></lightning-button></div>
+>
+<lightning-tabset class="slds-theme_shade">
+ <lightning-tab label="About Us" onactive={aboutClick}>
+           
+           In 2002, the Nation entered into the Nation-State Gaming Compact with New York State, which granted the Nation the exclusive right to build and operate three Class III gaming facilities in Western New York.
+Seneca Gaming Corporation was chartered in August 2002 to manage the Nation’s gaming operations. Seneca Niagara Falls Gaming Corporation was also chartered at this time, and Seneca Niagara Casino opened its doors on December 31, 2002. SNFGC opened a luxury hotel, the 26-story Seneca Niagara Resort & Casino, on December 30, 2005.
+Seneca Territory Gaming Corporation was chartered in August 2003 to manage the Nation’s second Class III gaming operation. On May 1, 2004, Seneca Allegany Casino officially opened for business. STGC opened the Seneca Allegany Resort & Casino on March 30, 2007.
+         
+        </lightning-tab>&nbsp;&nbsp;&nbsp;
+       <lightning-tab label="Donor" title="2nd tab extended title" onactive={donorClick}>
+            <c-donor-reg-form></c-donor-reg-form>
+        </lightning-tab>&nbsp;&nbsp;&nbsp;
+        <lightning-tab label="Sheltor Home">
+            
+           <c-shelter_-registration-form></c-shelter_-registration-form>
+        </lightning-tab>
+</lightning-tabset>
+
+      <template lwc:if={areDetailsVisible}> 
+<img src="https://nwssoft2022-dev-ed.develop.file.force.com/servlet/servlet.ImageServer?id=0155j000003bQCt&oid=00D5j00000CAMgT&lastMod=1693207866000"  width="2000" height="800">
+   </template>
+    
+</lightning-card>
+
+</template>

@@ -1,0 +1,9 @@
+<template> 
+    <lightning-card title="Test name">
+        <template if:true={showMessage}> 
+            <lightning-input label="enter a name" onchange={changehandler} placeholder="Enter a name "></lightning-input>
+        </template>
+        
+            <lightning-button label="ClickMe" onclick={handleClick}></lightning-button>
+    </lightning-card>
+</template>

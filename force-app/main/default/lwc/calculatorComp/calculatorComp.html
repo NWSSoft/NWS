@@ -1,0 +1,38 @@
+<template>
+<lightning-card title="CALCULATOR" class="slds-m-1-2-left_medium">
+<div >
+<lightning-input label="Enter First Number" 
+                    type="number"
+                    name="EnterFNumber"
+                    value={firstnumber} 
+                    placeholder="Enter First Number"
+                    onchange={changeHandlerOne}>
+                </lightning-input>
+
+<lightning-input label="Enter Second Number" 
+                    name="EnterSNumber"
+                    type="number"
+                        value={secondnumber}
+                        placeholder="Enter Second Number"
+                        onchange={changeHandlerTwo}>
+</lightning-input>
+ <lightning-input label="Operation result" 
+                            name="Operation result" 
+                            type="number"
+                            value={operationresult}
+                            placeholder="result"
+                            read-only="true">
+    </lightning-input>
+<br/><br/>
+        <lightning-button label="Addition" name="Add the Value" variant="Brand" onclick={additionhandler}>
+</lightning-button>&nbsp;
+            <lightning-button label="Subtraction" name="Subtract the Value" variant="Brand" onclick={subtractionhandler}>
+    </lightning-button>&nbsp;
+                <lightning-button label="Multiplication" name="multiply the Value" variant="Brand"  onclick={multiplicationhandler}>
+              </lightning-button>&nbsp;
+                    <lightning-button label="Division" name="Divide the Value" variant="Brand" onclick={divisionhandler}>
+                 </lightning-button>&nbsp;
+                        <lightning-button label="Modulus" name="Module the Value" variant="Brand" onclick={modulushandler}></lightning-button>
+</div>
+</lightning-card>
+</template>

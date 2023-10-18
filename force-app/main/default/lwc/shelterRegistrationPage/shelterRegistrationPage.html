@@ -1,0 +1,32 @@
+<template>
+
+    <lightning-card>
+
+        <div class="slds-align_absolute-center">
+
+            <div style="width: 1000px; border:1px solid rgb(220, 89, 41);" class="slds-p-around_medium">
+
+                <div class="slds-text-heading_medium slds-text-align_center">
+
+                    <b style='color:#c35323 !important;'>NGO Registration </b>
+
+                </div>
+
+                <div>
+
+
+
+                    <lightning-record-form object-api-name="approve_shelter__c" columns="2" mode="edit" layout-type="Full"
+                        onclick={saveClick}>
+
+                    </lightning-record-form>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </lightning-card>
+
+</template>

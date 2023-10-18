@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Create Account Using LDS Forms">
+       <lightning-layout>
+          <lightning-layout-item size="6" padding="around-small">
+                <lightning-input label="Name" value={inpName} onchange={namechangehandler}></lightning-input>
+                <lightning-input label="Phone" value={inpPhone} onchange={phonechangehandler}></lightning-input>
+                <lightning-input label="Industry" value={inpIndustry} onchange={industrychangehandler}></lightning-input> <br/><br/>
+                <lightning-button label="Create Account" onclick={createaccounthandler} variant="Brand"></lightning-button>
+          </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

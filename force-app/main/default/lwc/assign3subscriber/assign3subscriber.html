@@ -1,0 +1,17 @@
+<template>
+     <lightning-card title="Show Details of Bikes">
+        <template if:true={BikeData}>
+            <div class="slds-col">
+               <img src={BikeData.Bike_URL__c} alt="Bikerec Image" height="200px" width="500px"/>
+                
+                </div>
+                <div class="slds-col">
+
+                     <p>BIKE Name : {BikeData.Name}</p>
+                    
+                    
+                    
+            </div> 
+          </template>
+     </lightning-card>
+</template>

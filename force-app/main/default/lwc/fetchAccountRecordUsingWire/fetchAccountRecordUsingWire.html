@@ -1,0 +1,27 @@
+<template>
+<lightning-layout>
+    <lightning-layout-item padding="around-small" size="8">
+<lightning-card  title="How to display the Contacts based on Account Name in LWC">
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Enter account name text" onchange={handlechange}></lightning-input>
+    </div>
+    <div>
+        <lightning-button label="Search Account Name" size="small" variant="brand" onclick={handleAccountSearch} icon-name="utility:search" icon-position="right"></lightning-button>
+    </div>
+    <div class="slds-m-around_medium">
+        <template if:true={accRecords.data}>
+                        <lightning-datatable
+                            key-field="Id"
+                            data={accRecords.data}
+                            columns={employeeColumns}>
+                </lightning-datatable>
+
+        </template>             
+    </div>
+</lightning-card>
+</lightning-layout-item>
+<lightning-layout-item padding="around-small" size="10">
+<c-contact-list-comp account-id ={accountId}></c-contact-list-comp>
+</lightning-layout-item>
+</lightning-layout>
+</template>

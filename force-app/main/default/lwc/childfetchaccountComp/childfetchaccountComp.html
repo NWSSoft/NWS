@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Child Component">
+        <div class="slds-m-around_small slds-box">
+            <lightning-layout>
+                <lightning-layout-item padding="around-small" size="10">
+                    <lightning-input name="textVal" label=" Enter Name" type="text" variant="label-inline" onchange={handleChange}></lightning-input>                    
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="2">
+                    <lightning-button label="Search" variant="brand" onclick={handleClick}></lightning-button>                    
+                </lightning-layout-item>
+            </lightning-layout>
+            
+        </div>        
+    </lightning-card>
+</template>
