@@ -1,22 +1,37 @@
 <template>
-     <div class="backgroundImg" style={getBackgroundImage} >
-           
-              
-      <div class="slds-align_absolute-center">
 
-        <div style="width: 1000px; border:1px solid rgb(220, 89, 41);" class="slds-p-around_medium">
+  <div class="backgroundImg" style={getBackgroundImage}>
 
-            <div class="slds-text-heading_medium slds-text-align_center">
 
-                <b style='color:#c35323 !important;'>NGO Registration  created by swpnil </b>
+    <div class="slds-align_absolute-center">
 
-            </div>
-            
-            <lightning-record-form object-api-name={objectApiName} fields={fields} columns="2"  layout-type="Full">
-            </lightning-record-form>
-        
-     
-          </div> 
-         </div>
-        </div> 
+      <div style="width: 1000px; border:1px solid rgb(220, 89, 41);" class="slds-p-around_medium">
+
+        <div class="slds-text-heading_medium slds-text-align_center">
+
+          <b style='color:#c35323 !important;'>NGO Registration 1 </b>
+
+        </div>
+
+        <lightning-card title="Record Registration Form">
+          <div class="slds-p-around_medium">
+              <lightning-input label=" Name" name="inp1" value={Name} onchange={handleFirstNameChange}></lightning-input>
+              <lightning-input label="Email" name="inp2" value={Email} onchange={handleFirstNameChange}></lightning-input>
+              <lightning-input label="Gender" name="inp3" value={Gender} onchange={handleFirstNameChange}></lightning-input>
+              <lightning-input label="Designation" name="inp4" value={Designation} onchange={handleFirstNameChange}></lightning-input>
+              <lightning-input label="Mobile_number" name="inp5" value={Mobile_number} onchange={handleFirstNameChange}></lightning-input>
+              <lightning-input label="Address" name="inp6" value={Address} onchange={handleFirstNameChange}></lightning-input>
+              <!-- Add more fields as needed -->
+              <lightning-button label="Register" onclick={createRecord}></lightning-button>
+          </div>
+      </lightning-card>
+
+
+        <!--<lightning-record-form object-api-name={objectApiName} fields={fields} columns="2"  layout-type="Full">
+            </lightning-record-form> -->
+
+
+      </div>
+    </div>
+  </div>
 </template>
